@@ -21,6 +21,9 @@ function resetPassword($email, $password){
         fclose($handle);
         fclose($_handle);
         @rename("../storage/users.temp.csv", "../storage/users.csv");
+        if(file_exists("../storage/users.temp.csv")) {
+             $msg = "Internal error";
+        }
     } else {
         $msg = "Internal error";
     }

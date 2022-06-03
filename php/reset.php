@@ -20,7 +20,7 @@ function resetPassword($email, $password){
         }
         fclose($handle);
         fclose($_handle);
-        if(@rename("../storage/users.temp.csv", "../storage/users.csv")) {
+        if(!@rename("../storage/users.temp.csv", "../storage/users.csv")) {
             $msg = "Internal error";
         }
     } else {

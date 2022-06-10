@@ -9,6 +9,7 @@ function registerUser($username, $email, $password){
             while(($data = fgetcsv($handle)) !== FALSE) {
                 if($data[1] == $email) {
                     $msg = "Email exist";
+                    break;
                 }
             }
             if(!isset($msg)) {
